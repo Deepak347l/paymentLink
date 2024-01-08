@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Form</h1>
+        <div class="upi-container">
+            <label for="upiId">UPI ID:</label>
+            <input type="text" id="upiId" readonly>
+            <button onclick="copyToClipboard()">Copy UPI ID</button>
+        </div>
+
+            <div class="payment-methods">
+                <label for="paymentMethod"></label>
+                <div class="method" onclick="openPaymentApp('Paytm')">
+                    <img src="paytm-logo.png" alt="Paytm">
+                    <span>Paytm</span>
+                </div>
+                <div class="method" onclick="openPaymentApp('Google Pay')">
+                    <img src="google-pay-logo.png" alt="Google Pay">
+                    <span>Google Pay</span>
+                </div>
+                <div class="method" onclick="openPaymentApp('Amazon Pay')">
+                    <img src="amazon-pay-logo.png" alt="Amazon Pay">
+                    <span>Amazon Pay</span>
+                </div>
+                <div class="method" onclick="openPaymentApp('Phone Pay')">
+                    <img src="phone-pay-logo.png" alt="Phone Pay">
+                    <span>Phone Pay</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="screenshot">Upload Screenshot:</label>
+                <input type="file" id="screenshot" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionId">UTR No:</label>
+                <input type="text" id="transactionId" required>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <button type="button" onclick="submitPayment()">Submit Payment</button>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
+    <script src="your-firebase-config.js"></script>
+    <script src="your-script.js"></script>
+</body>
+</html>
