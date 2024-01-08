@@ -6,7 +6,7 @@ function openPaymentApp(paymentMethod) {
     // Define deep linking URLs for each payment app
     switch (paymentMethod) {
         case 'Paytm':
-            deepLinkUrl = 'paytm://open';
+            deepLinkUrl = 'upi://pay';
             break;
         case 'Google Pay':
             deepLinkUrl = 'upi://pay';
