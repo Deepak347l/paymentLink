@@ -8,15 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>Payment Form</h1>
+        <div class="amount-container">
+            <label for="amountPaid">Total Payment Amount:</label>
+            <input type="text" id="amountPaid" readonly>
+        </div>
+        <h4>Payment Via UPI</h4>
         <div class="upi-container">
-            <label for="upiId">UPI ID:</label>
+            <label for="upiId">1.Copy UPI Information</label>
             <input type="text" id="upiId" readonly>
             <button onclick="copyToClipboard()">Copy UPI ID</button>
         </div>
 
             <div class="payment-methods">
-                <label for="paymentMethod"></label>
+                <label for="paymentMethod">2.Transfer the amount you want to recharge to us by UPI ID transfer,NOT MOBILE NUMBER.</label>
                 <div class="method" onclick="openPaymentApp('Paytm')">
                     <img src="paytm-logo.png" alt="Paytm">
                     <span>Paytm</span>
@@ -35,12 +39,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="screenshot">Upload Screenshot:</label>
+                <label for="screenshot">3.Upload Screenshot:</label>
                 <input type="file" id="screenshot" accept="image/*" required>
             </div>
 
             <div class="form-group">
-                <label for="transactionId">UTR No:</label>
+                <label for="transactionId">4.12 Digit UTR No:</label>
                 <input type="text" id="transactionId" required>
             </div>
 
