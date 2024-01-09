@@ -30,12 +30,15 @@ function openPaymentApp(paymentMethod) {
 // Function to fetch UPI IDs from Firebase
 function fetchUpiIds() {
     const upiIdInput = document.getElementById("upiId");
+    const amountPaidInput = document.getElementById("amountPaid");
 
     db.collection("upiIds").doc("id") // Replace "your_document_id" with the actual document ID
         .get()
         .then((doc) => {
             if (doc.exists) {
                 const upiId = doc.data().upiId;
+                const amountPaid = doc.data().amountPaid;
+                amountPaidInput.value = amountPaid;
                 upiIdInput.value = upiId;
             } else {
                 console.error("UPI ID document not found");
